@@ -1,0 +1,26 @@
+pkgname=brogue-ce
+version=1.15.1
+revision=1
+build_style=gnu-makefile
+make_build_args="GRAPHICS=YES RELEASE=YES DATADIR=/usr/share/brogue-ce"
+hostmakedepends="pkg-config"
+makedepends="SDL2-devel SDL2_image-devel"
+short_desc="Brogue: Community Edition"
+maintainer="schlafmohn <noreply@example.com>"
+license="AGPL-3.0-or-later"
+homepage="https://github.com/tmewett/BrogueCE"
+distfiles="https://github.com/tmewett/BrogueCE/archive/refs/tags/v${version}.tar.gz"
+checksum=2abc186c5327342cb9ad7e45d41096ab10797d5ba76dcac843824ac2a0bfb3ac
+
+do_install() {
+	vbin bin/brogue
+
+	vmkdir usr/share/brogue-ce/assets
+	vinstall bin/assets/tiles.png 644 usr/share/brogue-ce/assets
+	vinstall bin/assets/tiles.bin 644 usr/share/brogue-ce/assets
+	vinstall bin/assets/icon.png 644 usr/share/brogue-ce/assets
+
+	vinstall ${FILESDIR}/brogue-ce.desktop 644 usr/share/applications
+
+	vlicense LICENSE.txt
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Brogue CE
+Comment=Community Edition of the classic roguelike Brogue
+Exec=brogue
+Icon=/usr/share/brogue-ce/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Game;RolePlayingGame;
