@@ -1,6 +1,6 @@
 # brogue ce for void linux
 
-void linux package template for brogue: community edition.
+void linux package template for brogue: community edition. includes setup for launcher discovery for tiling wms.
 
 ## prereqs
 
